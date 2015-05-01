@@ -5,4 +5,9 @@
 <%= @article.content %>
 </div>
 
+<%= render @article.comments %>
+
+<h2>Create Comment </h2>
+<%= render "comments/form" %>
+
 <%= link_to "Back", articles_path  %>

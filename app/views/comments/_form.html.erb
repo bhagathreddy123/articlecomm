@@ -1,0 +1,9 @@
+<%= form_for([@article, @article.comments.build]) do |c| %>
+<div class="page-wrapper">
+<%= c.label :name %>
+<%= c.text_field :name %><br>
+<%= c.label :content %>
+<%= c.text_area :context %></br>
+<%= c.submit %>
+</div>
+<%end%>

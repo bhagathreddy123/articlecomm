@@ -6,5 +6,11 @@ Rails.application.routes.draw do
   	resources :comments
   end
   root 'recipes#index'
-  resources :recipes
+  resources :recipes do 
+  	collection do
+  	get	:food_preferences
+  	get :cuisines
+  	get :food_types
+  	end
+  end
 end

@@ -1,0 +1,7 @@
+<legend>
+FoodPreference List
+</legend>
+<% @food_preferences.each do |fp| %>
+<p><%= fp.name%></p>
+<%end%>
+<%= link_to "Back", root_path %>

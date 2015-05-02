@@ -7,6 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+<div class="row">
+
+<div class="col-lg-2">
+
+<div class="panel panel-primary" id="panels">
+<div class="panel-heading">Food Preferences </div>
+<% @food_preferences.limit(3).each do |fp| %>
+<p><%= fp.name%></p>
+<%end%>
+<%= link_to "ViewMore", food_preferences_recipes_path, :class => "btn btn-info" %>
+</div>
+
+<div class="panel panel-primary" id="panels">
+<div class="panel-heading">Food Type </div>
+<% @food_types.limit(3).each do |ft| %>
+<p><%= ft.name%></p>
+<%end%>
+<%= link_to "ViewMore", food_types_recipes_path, :class => "btn btn-info" %>
+</div>
+
+<div class="panel panel-primary" id="panels">
+<div class="panel-heading">Cuisine </div>
+<% @cuisines.limit(3).each do |c| %>
+<p><%= c.name%></p>
+<%end%>
+<%= link_to "ViewMore", cuisines_recipes_path, :class => "btn btn-info" %>
+</div>
+
+</div>
+
+
+
+<div class="col-lg-9"> 
+
 <div class="navbar navbar-static-top">
 <div class="container">
 <a class="navbar-brand" href="#"><%= image_tag "currynation.png"%></a>
@@ -23,12 +59,10 @@
 <li class="active"><%= link_to "SignUp", new_user_registration_path%></li>
 <%end%>
 </ul>
-
 </div>
-
-
-
 <%= yield %>
 
+</div>
+</div>
 </body>
 </html>

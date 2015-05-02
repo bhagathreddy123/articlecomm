@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-before_action :set_recipe, :except => [:index, :new, :create]
+	before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+	before_action :set_recipe, :except => [:index, :new, :create,:cuisines, :food_types, :food_preferences]
 
 	def new
 		@recipe = Recipe.new
@@ -38,10 +38,18 @@ before_action :set_recipe, :except => [:index, :new, :create]
 
 	def destroy
 		if @recipe.destroy
-		redirect_to recipes_path
-	end
+			redirect_to recipes_path
+		end
 	end
 
+	def recipes
+	end
+
+	def food_types
+	end
+
+	def food_preferences
+	end
 
 	private
 

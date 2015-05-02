@@ -1,1 +1,10 @@
-sdfd
+<div>
+<h2>Comments</h2>
+<% @article.comments.each do |ac| %>
+<h2>Name</h2>
+<%= ac.name %> 
+<h2>Content</h2>
+<%= ac.context %>
+ <%= link_to 'Destroy Comment', article_comment_path(@article, ac), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<%end%>
+</div>

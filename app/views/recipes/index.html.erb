@@ -1,0 +1,38 @@
+<table class="table table border">
+<tr>
+	<th>title </th>
+	<th> ingredients</th>
+	<th> FoodPreference</th>
+	<th> FoodType</th>
+	<th> Cuisine</th>
+	<th> Action</th>
+</tr>
+
+<% @recipes.each do |recipe| %>
+<tr>
+<td><%=recipe.title%></td>
+<td><%=recipe.ingredients%></td>
+<td>
+<%if recipe.food_preference.present?%>
+<%= recipe.food_preference.name  %>
+<%end%></td>
+<td>
+<% if recipe.food_type.present? %>
+<%= recipe.food_type.name%>
+<%end%>
+</td>
+<td>
+<% if recipe.cuisine.present? %><%= recipe.cuisine.name  %>
+<%end%></td>
+<td><%= link_to "Edit", edit_recipe_path(recipe), :class => "btn btn-primary"%>|
+<%= link_to "Show", recipe_path(recipe), :class => "btn btn-success"%>|
+<%= link_to "Delete", recipe_path(recipe), :method => :delete, :class => "btn btn-danger"%></td>
+</tr>
+<%end%>
+</table>
+
+
+
+<%=  link_to "New", new_recipe_path %>
+
+

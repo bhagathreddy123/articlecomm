@@ -9,6 +9,7 @@ class GamesController < ApplicationController
 	def create
 		@game = Game.new(game_params)
 		if @game.save
+			StudentMailer.sample_email(@game).deliver
 			redirect_to games_path
 		else
 			render "new"

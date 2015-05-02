@@ -73,6 +73,45 @@ index.html.erb
 
 
 
+mask validation for phone field email validation with regular expression for student and ckeditor for description of game"
+
+sending mail
+--------------------
+
+sample_email.html.erb
+-----------------------
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @name %></h1>
+    <p>
+      Sample mail sent using smtp.
+    </p>
+  </body>
+</html>
+
+class StudentMailer < ApplicationMailer
+  def sample_email(to,name)
+    @user = name
+    @to = to
+  
+    mail(to: @to, subject: 'Sample Email')
+  end
+end
+
+def create
+		@game = Game.new(game_params)
+		if @game.save
+			StudentMailer.sample_email("katta04.bhagath@gmail.com", "bhagath").deliver
+			redirect_to games_path
+		else
+			render "new"
+		end
+	end
+
 
 
 

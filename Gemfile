@@ -43,4 +43,6 @@ end
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise' 
 
-gem 'friendly_id'
+gem 'friendly_id' 
+gem 'ckeditor'
+gem 'paperclip'

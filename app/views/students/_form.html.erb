@@ -1,3 +1,4 @@
+   <script type="text/javascript" src="/assets/jquery.mask.min.js"></script>
   <% if @student.errors.any? %>
     <div >
       <h2>
@@ -22,10 +23,18 @@
 
 <div class="form-group">
 <%= f.label :phone %>
-<%= f.telephone_field :phone_no %>
+<%= f.telephone_field :phone_no, :id => "txtphone" %>
 </div>
 
 <div class="form-action">
 <%= f.submit%>
 </div>
 
+
+
+<script>
+ $(document).ready(function() {
+$('#txtphone').mask('(000) 000-0000');
+});
+
+ </script>

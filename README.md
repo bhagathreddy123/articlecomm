@@ -40,3 +40,41 @@ gem 'sass-rails', '>= 3.2'
 //= require bootstrap-sprockets
 
 
+crud operations and validations for custom routes actions of student
+
+friendly_id and devise implementation 
+
+email phone validation
+jquery.mask.min.js for phone validation
+
+gem 'ckeditor'
+gem 'paperclip'
+budle install
+rails generate ckeditor:install --orm=active_record --backend=paperclip
+rake db:migrate
+
+
+application.js
+---------------
+//= require ckeditor/init
+_form.html.erb
+---------------
+<div class="form-group">
+<%=f.label:description%>
+  <%= f.cktext_area :description, :value => 'Default value', :id => 'sometext' %>
+</div>
+-----------
+index.html.erb
+------------------
+<h3>Content</h3>
+<%= raw game.description %>
+
+
+
+
+
+
+
+
+
+

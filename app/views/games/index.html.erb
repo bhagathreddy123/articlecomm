@@ -1,0 +1,23 @@
+<table class ="table table-striped" border = "1">
+	<tr>
+		<th>name</th>
+		<th>Description</th>
+
+		<th>action</th>
+	</tr>
+	<% @games.each  do |game| %>
+	<tr>
+		<td> <%=game.name%> </td>
+		<td> <%=game.description%> </td>
+
+		<td> 
+			<%=link_to "show", game_path(:id=>game.id),:class=>"btn btn-success"%>|
+			<%=link_to "edit", edit_game_path(:id=>game.id),:class=>"btn btn-primary"%>
+			<%=link_to "delete", game_path(game),:method=>:delete, :data=>{:confirm=>"are you sure?"} ,
+			:class=>"btn btn-danger"%>
+		</td>
+	</tr>
+	<%end%>
+
+</table>
+<%= link_to "New", new_game_path,:class=>"btn btn-default"%>

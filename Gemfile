@@ -41,4 +41,6 @@ end
 
 
 gem 'bootstrap-sass', '~> 3.3.4'
-gem 'devise'
+gem 'devise' 
+
+gem 'friendly_id'

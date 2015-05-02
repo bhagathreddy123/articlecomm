@@ -1,0 +1,36 @@
+<%= form_for @player do |f| %>
+<div class="form-group">
+<%=f.label :name%>
+<%=f.text_field :name%>
+</div>
+
+<div class="form-group">
+<%=f.label :Age%>
+<%=f.text_field :age%>
+</div>
+<div class="form-group">
+<%= f.submit%>
+</div>
+<%end%> 
+
+<%  if @players.name.present? %>
+<h2> display players information </h2>
+<table>
+<tr>
+<th>name</th>
+
+<th> Age</th>
+</tr>
+<% @players.each do |player| %>
+<tr>
+<td><%=player.name%></td>
+
+<td><%=player.age%></td>
+</tr>
+<%end%>
+</table>
+
+<%else%>
+<h2> No Player </h2> 
+
+<%end%>

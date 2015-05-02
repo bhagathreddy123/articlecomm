@@ -1,0 +1,8 @@
+<h2>Edit Student </h2>
+<%= form_for @student, :url => update_student_student_path(@student), :method => "PUT" do |f| %> 
+<%= render :partial => "form", :locals => {:f => f } %>
+<% end%>
+
+
+
+

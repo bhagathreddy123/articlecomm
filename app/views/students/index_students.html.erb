@@ -1,0 +1,24 @@
+<legend> Students List </legend>
+
+<table class="table table-stripped">
+<tr>
+	<th>Name </th>
+	<th> Email</th>
+	<th> Mobile Number </th>
+	<th> Action</th>
+</tr>
+
+<% @students.each do |student| %>
+<tr>
+<td><%=student.name%></td>
+<td><%=student.email%></td>
+<td><%= student.phone_no %> </td>
+<td><%= link_to "Edit", edit_student_student_path(student), :class => "btn btn-primary"%>|
+<%= link_to "Show", show_student_student_path(student), :class => "btn btn-success"%>|
+<%= link_to "Delete", delete_student_student_path(student), :method => :delete, :class => "btn btn-danger"%></td>
+</tr>
+<%end%>
+</table>
+
+
+<%= link_to "New Student", new_student_students_path %>

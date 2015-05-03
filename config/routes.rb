@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   mount Ckeditor::Engine => '/ckeditor'
   get 'students/index_students'
 
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   resources :articles do
   	resources :comments
   end
-  root 'recipes#index'
+ # root 'recipes#index'
   resources :recipes do 
   	collection do
      get	:food_preferences
@@ -30,4 +31,8 @@ Rails.application.routes.draw do
     delete :delete_student
   end
 end
+
+  resource :calendar, only: [:show], controller: :calendar
+  root to: "calendar#show"
+
 end

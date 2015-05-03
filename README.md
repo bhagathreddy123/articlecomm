@@ -113,7 +113,5 @@ def create
 	end
 
 
-
-
-
-
+implemented calendar using this link
+http://richonrails.com/articles/building-a-basic-calendar-in-ruby-on-rails

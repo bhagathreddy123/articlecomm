@@ -115,3 +115,10 @@ def create
 
 implemented calendar using this link
 http://richonrails.com/articles/building-a-basic-calendar-in-ruby-on-rails
+
+
+implemented active_Admin
+
+
+A copy of ApplicationController has been removed from the module tree but is still active! error fixed commented  the below line in application controller 
+  helper_method :sidebar_values

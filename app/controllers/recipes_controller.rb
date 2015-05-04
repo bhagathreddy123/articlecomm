@@ -42,7 +42,7 @@ class RecipesController < ApplicationController
 		end
 	end
 
-	def recipes
+	def cuisines
 	end
 
 	def food_types

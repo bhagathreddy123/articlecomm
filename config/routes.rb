@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   mount Ckeditor::Engine => '/ckeditor'
   get 'students/index_students'
 
@@ -9,8 +11,8 @@ Rails.application.routes.draw do
   	resources :comments
   end
  # root 'recipes#index'
-  resources :recipes do 
-  	collection do
+ resources :recipes do 
+   collection do
      get	:food_preferences
      get :cuisines
      get :food_types
@@ -31,8 +33,7 @@ Rails.application.routes.draw do
     delete :delete_student
   end
 end
-
-  resource :calendar, only: [:show], controller: :calendar
-  root to: "calendar#show"
+resource :calendar, only: [:show], controller: :calendar
+root to: "calendar#show"
 
 end
